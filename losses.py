@@ -173,7 +173,8 @@ def get_ddpm_loss_fn(vpsde, train, reduce_mean=True, start=1):
     return loss_fn
 
 
-def get_step_fn(sde, train, optimize_fn=None, reduce_mean=False, continuous=True, likelihood_weighting=False, start=1):
+def get_step_fn(sde, train, optimize_fn=None, reduce_mean=False, continuous=True, 
+                likelihood_weighting=False, start=1, gamma=[1,1]):
     """Create a one-step training/evaluation function.
 
     Args:
@@ -217,7 +218,7 @@ def get_step_fn(sde, train, optimize_fn=None, reduce_mean=False, continuous=True
             optimizer = state['optimizer']
             optimizer.zero_grad()
             losses = loss_fn(model, batch)
-            loss = losses[0] + losses[1]
+            loss = (gamma[0] * losses[0]) + (gamma[1] * losses[1])
             loss.backward()
             parameters = list(model[0].parameters()) + list(model[1].parameters())
             optimize_fn(optimizer, parameters, step=state['step'])
@@ -233,7 +234,7 @@ def get_step_fn(sde, train, optimize_fn=None, reduce_mean=False, continuous=True
                 ema_0.copy_to(model[0].parameters())
                 ema_1.copy_to(model[1].parameters())
                 losses = loss_fn(model, batch)
-                loss = losses[0] + losses[1]
+                loss = (gamma[0] * losses[0]) + (gamma[1] * losses[1])
                 ema_0.restore(model[0].parameters())
                 ema_1.restore(model[1].parameters())
 
