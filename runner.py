@@ -124,10 +124,10 @@ def train(config, writer, checkpoint_dir, image_dir, logger):
     
     train_step_fn = get_step_fn(sde, train=True, optimize_fn=optimize_fn, reduce_mean=reduce_mean, 
                         continuous=continuous, likelihood_weighting=likelihood_weighting,
-                        start=config.flow.start_step, gamma=[1,1])
+                        start=config.flow.start_step, w=[1,1])
     eval_step_fn = get_step_fn(sde, train=False, optimize_fn=optimize_fn, reduce_mean=reduce_mean, 
                         continuous=continuous, likelihood_weighting=likelihood_weighting, 
-                        start=config.flow.start_step, gamma=[1,1])
+                        start=config.flow.start_step, w=[1,1])
 
     # Building sampling functions
     if config.training.snapshot_sampling:
@@ -237,7 +237,7 @@ def evaluate(config, checkpoint_dir, eval_dir, logger, ckpt_s):
         
         eval_step = get_step_fn(sde, train=False, optimize_fn=optimize_fn, reduce_mean=reduce_mean,  
                         continuous=continuous, likelihood_weighting=likelihood_weighting, 
-                        start=config.flow.start_step, gamma=[1,1])
+                        start=config.flow.start_step, w=[1,1])
 
     if config.eval.enable_bpd:
         # Build the likelihood computation function when likelihood is enabled
