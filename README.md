@@ -17,7 +17,7 @@ precompute_fid_statistics.py
 All models can be found in the `models' folder. 
 
 To train a specific model, please run 'main.py' and modify the flags to define the required paths and directories. Other flags can be changed if needed. 
-For instance, set `mode' as `train' or `eval' for training or evaluation, respectively. 
+For instance, set `mode` as `train` or `eval` for training or evaluation, respectively. 
 Also, choose one of the 7 provided config files and its corresponding SDE (ve, vp or subvp).  
 All the config files, training and sampling files are self-explanatory. 
 
