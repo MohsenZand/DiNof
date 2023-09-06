@@ -1,4 +1,4 @@
-# [Diffusion Models with Deterministic Normalizing Flow Priors](https://arxiv.org/)
+# [Diffusion Models with Deterministic Normalizing Flow Priors](https://arxiv.org/abs/2309.01274)
 
 Our code is built upon the code from [Song et al.](https://github.com/yang-song/score_sde_pytorch). 
 It is tested under Ubuntu 20.04, CUDA 11.6, with NVIDIA A100 GPUs. Python 3.11.1 version is used for development. 
@@ -21,9 +21,11 @@ All the config files, training and sampling files are self-explanatory.
 Please cite our paper if you use code from this repository:
 ```
 @article{zand2023diffusion,
-  title={Diffusion Models with Deterministic Normalizing Flow Priors},
-  author={Zand, Mohsen and Etemad, Ali and Greenspan, Michael},
-  journal={arXiv preprint arXiv:2308.16801},
-  year={2023}
+      title={Diffusion Models with Deterministic Normalizing Flow Priors}, 
+      author={Mohsen Zand and Ali Etemad and Michael Greenspan},
+      year={2023},
+      eprint={2309.01274},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
 }
 ```
