@@ -17,3 +17,18 @@ For instance, set `mode` as `train` or `eval` for training or evaluation, respec
 Also, choose one of the 7 provided config files and its corresponding SDE (ve, vp or subvp).  
 All the config files, training and sampling files are self-explanatory. 
 
+
+## Citation
+Please cite our paper if you use code from this repository:
+```
+@article{
+zand2024diffusion,
+title={Diffusion Models with Deterministic Normalizing Flow Priors},
+author={Mohsen Zand and Ali Etemad and Michael Greenspan},
+journal={Transactions on Machine Learning Research},
+issn={2835-8856},
+year={2024},
+url={https://openreview.net/forum?id=ACMNVwcR6v},
+note={}
+}
+```
