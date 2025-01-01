@@ -1,4 +1,4 @@
-# Diffusion Models with Deterministic Normalizing Flow Priors
+# [Diffusion Models with Deterministic Normalizing Flow Priors](https://openreview.net/forum?id=ACMNVwcR6v)
 
 Our code is built upon the code from [Song et al.](https://github.com/yang-song/score_sde_pytorch). 
 It is tested under Ubuntu 20.04, CUDA 11.6, with NVIDIA A100 GPUs. Python 3.11.1 version is used for development. 
