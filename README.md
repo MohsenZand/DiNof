@@ -28,7 +28,6 @@ author={Mohsen Zand and Ali Etemad and Michael Greenspan},
 journal={Transactions on Machine Learning Research},
 issn={2835-8856},
 year={2024},
-url={https://openreview.net/forum?id=ACMNVwcR6v},
-note={}
+url={https://openreview.net/forum?id=ACMNVwcR6v}
 }
 ```
